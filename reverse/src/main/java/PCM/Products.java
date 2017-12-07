@@ -9,6 +9,7 @@ public class Products {
     public Products(String id){
         this.id = id;
     }
+
     public String toString() {
         return "id: "+ id;
     }
