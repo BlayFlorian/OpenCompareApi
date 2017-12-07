@@ -106,4 +106,8 @@ public class Metadata {
     public String toString() {
         return "author: "+ author + " Name: " +name + " Source: "+ source + " Description: " + description + " Licence: " + licence;
     }
+
+    public JSONObject toJson() {
+        return new JSONObject(this);
+    }
 }
