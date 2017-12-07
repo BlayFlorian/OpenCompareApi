@@ -2,39 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d922a4aa-3ef6-4636-b981-e2b13c00c48e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/Cells.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/Features.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/PCM.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/Products.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/apiOpenCompare/PCMCreator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/apiOpenCompare/apiOpenCompare.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/apiOpenCompare/webService/ApiCall.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/Cells.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/Features.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/PCM.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/Products.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/target/classes/PCMCreator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/target/classes/apiOpenCompare.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/target/classes/webService/ApiCall.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160810.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apiOpenCompare.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/reverse.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/src/main/java/PCM/Cells.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/src/main/java/PCM/Features.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/src/main/java/PCM/PCM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/src/main/java/PCM/Products.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/src/main/java/PCMCreator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/src/main/java/apiOpenCompare.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reverse/src/main/java/webService/ApiCall.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/Cells.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/Features.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/PCM.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/apiOpenCompare/PCM/Products.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/apiOpenCompare/PCMCreator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/apiOpenCompare/apiOpenCompare.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/apiOpenCompare/webService/ApiCall.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/reverse/target/" />
@@ -50,7 +24,7 @@
       <file leaf-file-name="apiOpenCompare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reverse/src/main/java/apiOpenCompare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="147">
               <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -72,7 +46,7 @@
       <file leaf-file-name="PCM.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reverse/src/main/java/PCM/PCM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="966">
+            <state relative-caret-position="945">
               <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -84,7 +58,7 @@
       <file leaf-file-name="PCMCreator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reverse/src/main/java/PCMCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-655">
+            <state relative-caret-position="651">
               <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -202,6 +176,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,9 +205,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -378,11 +352,12 @@
       <workItem from="1511272346769" duration="1441000" />
       <workItem from="1511517741193" duration="6469000" />
       <workItem from="1511885316338" duration="2069000" />
+      <workItem from="1511945426582" duration="47000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27291000" />
+    <option name="totallyTimeSpent" value="27338000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -390,11 +365,10 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267544" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2236842" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2236842" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -410,6 +384,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267544" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -436,12 +411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding>
-            <element signature="e#157#158#0" expanded="false" />
-            <element signature="e#185#186#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#249#250#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,12 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding>
-            <element signature="e#157#158#0" expanded="false" />
-            <element signature="e#185#186#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#249#250#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -790,12 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#157#158#0" expanded="false" />
-            <element signature="e#185#186#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#249#250#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,13 +781,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reverse/src/main/java/PCM/PCM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
+        <state relative-caret-position="945">
           <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -840,7 +796,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reverse/src/main/java/PCMCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-655">
+        <state relative-caret-position="651">
           <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -860,13 +816,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reverse/src/main/java/apiOpenCompare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="147">
           <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
