@@ -5,10 +5,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SimpleTimeZone;
 
-public class PCM {
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Real;
+
+public class PCM  {
 
     JSONObject json;
     Metadata metadata;
@@ -22,8 +28,6 @@ public class PCM {
         this.metadata = metadata;
         this.features = features;
         this.products = products;
-      //  features = new HashMap<String, Features>();
-      //  products = new HashMap<String,Map>();
         feature = new Features();
 
     }
@@ -50,6 +54,7 @@ public class PCM {
     public JSONObject getJson() {
         return json;
     }
+
     private String notNull(String key) {
 
         Object obj;
@@ -103,14 +108,53 @@ public class PCM {
                 String id = productsJson.getJSONObject(i).getString("id");
                 JSONArray cellsJson = productsJson.getJSONObject(i).getJSONArray("cells");
                 addProduct(id);
-                for (int y =0; y < cellsJson.length();y++){
+                for (int y =0; y < cellsJson.length();y++) {
                     JSONObject cellJson = cellsJson.getJSONObject(y);
                     c = new Cells();
-                    if(cellJson.getString("type") == "number") {
-                        c.setValue(Integer.toString(cellJson.getInt("value")));
-                    } else {
-                        c.setValue(cellJson.getString("value"));
+                    String type = cellJson.getString("type");
+                    String s ="";
+                    if((type.equals("number") || type.equals("undefined")) || (type.equals("number") && type.equals("undefined") )) {
+                    }else{
+                        s = cellJson.getString("value");
                     }
+                    switch(type) {
+                        case "date":
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                            try {
+                                Date d = sdf.parse(s);
+                                c.setValue(d);
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
+                           break;
+
+                        case "string":
+                            c.setValue(s);
+                            break;
+
+                        case "boolean" :
+                            boolean bool = Boolean.parseBoolean(s);
+                                c.setValue(bool);
+                            break;
+                        case "number" :
+                            Double d = cellJson.getDouble("value");
+                            if ((d == Math.floor(d)) && !Double.isInfinite(d)) {
+                                Integer n = cellJson.getInt("value");
+                                c.setValue(n);
+                            }
+                            else{
+                                c.setValue(d);
+                            }
+
+                            break;
+                        case "undefined":
+                            c.setValue(null);
+
+                        default:
+                            c.setValue(s);
+
+                    }
+
                     c.setType(cellJson.getString("type"));
                     c.setUnit(cellJson.getString("unit"));
                     c.setPartial(cellJson.getBoolean("isPartial"));
@@ -121,7 +165,7 @@ public class PCM {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        System.out.println(getProducts().get("P0").get("F5").toString());
+        System.out.println(getProducts().get("P0").get("F0").toString());
     }
 
 

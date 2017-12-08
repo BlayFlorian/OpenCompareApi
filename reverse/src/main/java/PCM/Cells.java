@@ -1,11 +1,13 @@
 package PCM;
 
+import java.util.Date;
+
 public class Cells {
 
     private String featureId;
     private String type ;
     private String unit;
-    private String value;
+    private Object value;
     private int valueInt;
     private boolean isPartial;
 
@@ -16,7 +18,7 @@ public class Cells {
         this.type =type;
         this.unit = unit;
         this.isPartial = isPartial;
-        setType();
+        //setType();
     }
 
     public String getFeatureId() {
@@ -34,7 +36,7 @@ public class Cells {
         this.unit = unit;
     }
 
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 
@@ -43,9 +45,8 @@ public class Cells {
     }
 
     private void setType() {
-        if(type== "number") {
-            valueInt = Integer.parseInt(value);
-        }
+
+
     }
     @Override
     public String toString() {

@@ -9,7 +9,7 @@ public class apiOpenCompare
 {
     public static void main(String[] args) {
 
-        String myURL = "https://opencompare.org/api/59b146841ce2640a4802dfac";
+        String myURL = "https://opencompare.org/api/59c3d669384f2b07bbda544c";
         ApiCall call = new ApiCall(myURL);
         JSONObject json = call.getJsonObj();
         Map features = new HashMap<String, Features>();
