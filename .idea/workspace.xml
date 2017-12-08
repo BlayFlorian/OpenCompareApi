@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d922a4aa-3ef6-4636-b981-e2b13c00c48e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/target/classes/PCM/Cells.class" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/Cells.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/target/classes/PCM/Features.class" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/Features.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/target/classes/PCM/Metadata.class" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/Metadata.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/target/classes/PCM/PCM.class" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/PCM.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/target/classes/PCM/Products.class" afterPath="$PROJECT_DIR$/reverse/target/classes/PCM/Products.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/target/classes/apiOpenCompare.class" afterPath="$PROJECT_DIR$/reverse/target/classes/apiOpenCompare.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/target/classes/webService/ApiCall.class" afterPath="$PROJECT_DIR$/reverse/target/classes/webService/ApiCall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/pom.xml" afterPath="$PROJECT_DIR$/reverse/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/reverse.iml" afterPath="$PROJECT_DIR$/reverse/reverse.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/src/main/java/PCM/Cells.java" afterPath="$PROJECT_DIR$/reverse/src/main/java/PCM/Cells.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/src/main/java/PCM/PCM.java" afterPath="$PROJECT_DIR$/reverse/src/main/java/PCM/PCM.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reverse/src/main/java/apiOpenCompare.java" afterPath="$PROJECT_DIR$/reverse/src/main/java/apiOpenCompare.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/reverse/target/" />
@@ -28,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="PCM.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PCM.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reverse/src/main/java/PCM/PCM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="137">
@@ -36,6 +23,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/PCM/Features.java" />
         <option value="$PROJECT_DIR$/src/apiOpenCompare.java" />
         <option value="$PROJECT_DIR$/src/PCM/Products.java" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/PCMCreator.java" />
         <option value="$PROJECT_DIR$/src/PCM/PCM.java" />
         <option value="$PROJECT_DIR$/src/PCM/Cells.java" />
@@ -186,6 +182,7 @@
         <option value="$PROJECT_DIR$/reverse/src/main/java/PCM/Cell.java" />
         <option value="$PROJECT_DIR$/reverse/src/main/java/apiOpenCompare.java" />
         <option value="$PROJECT_DIR$/reverse/src/main/java/PCM/PCM.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -201,12 +198,6 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-58" />
-    <option name="y" value="25" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -229,6 +220,11 @@
             <path>
               <item name="OpenCompareApi" type="b2602c69:ProjectViewProjectNode" />
               <item name="OpenCompareApi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenCompareApi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenCompareApi" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenCompareApi" type="b2602c69:ProjectViewProjectNode" />
@@ -471,15 +467,16 @@
       <workItem from="1511517741193" duration="6469000" />
       <workItem from="1511885316338" duration="2069000" />
       <workItem from="1512222648109" duration="22302000" />
-      <workItem from="1512641760075" duration="26133000" />
+      <workItem from="1512641760075" duration="26408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75726000" />
+    <option name="totallyTimeSpent" value="76001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -494,7 +491,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -633,13 +630,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Json.java" />
     <entry file="file://$PROJECT_DIR$/out/production/apiOpenCompare/apiOpenCompare.class" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../java-json.jar!/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/reverse/src/main/java/JSONCreator.java" />
     <entry file="file://$PROJECT_DIR$/reverse/pom.xml">
@@ -887,6 +877,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
