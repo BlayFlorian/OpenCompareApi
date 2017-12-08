@@ -4,17 +4,15 @@ import org.json.JSONObject;
 
 public class PCMExport {
     PCM pcm;
-    String json;
+    JSONObject json;
     public PCMExport(PCM pcm) {
         this.pcm = pcm;
         JSONObject jsonObject = pcm.metadata.toJson();
         jsonObject = pcm.featureToJson(jsonObject);
-        jsonObject = pcm.productToJson(jsonObject);
-        json = jsonObject.toString();
-        System.out.println(json);
+        json = pcm.productToJson(jsonObject);
     }
 
-    public String getJson(){
+    public JSONObject getJson(){
         return json;
     }
 

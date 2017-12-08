@@ -14,11 +14,16 @@ public class Products {
         this.cells = cells;
     }
 
+
     public String toString() {
         return "id: "+ id;
     }
 
     public String getId() {
         return id;
+    }
+
+    public LinkedHashMap<String,Cells> getCells() {
+        return cells;
     }
 }

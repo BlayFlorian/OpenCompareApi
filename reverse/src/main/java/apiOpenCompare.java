@@ -11,13 +11,11 @@ public class apiOpenCompare
         String myURL = "https://opencompare.org/api/59c3d669384f2b07bbda544c";
         ApiCall call = new ApiCall(myURL);
         JSONObject json = call.getJsonObj();
-        LinkedHashMap features = new LinkedHashMap<String, Features>();
-        LinkedHashMap products = new LinkedHashMap<String,Map>();
-        PCM pcm = new PCM(features,products);
-        pcm.setJson(json);
-        pcm.setMetadata();
-        pcm.setFeatures();
-        pcm.setProductsCells();
-        new PCMExport(pcm);
+        PCM pcm = new PCM(json);
+        PCMExport pcmExport = new PCMExport(pcm);
+        JSONObject jsonObject2 = pcmExport.getJson();
+        PCM pcm2 = new PCM(jsonObject2);
+        PCMExport pcmExport1 = new PCMExport(pcm2);
+        System.out.println(pcmExport1.getJson().toString());
     }
 }

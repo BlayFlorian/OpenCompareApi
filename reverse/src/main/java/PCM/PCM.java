@@ -1,6 +1,5 @@
 package PCM;
 
-import com.sun.istack.internal.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,18 +10,23 @@ import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Real;
 public class PCM  {
 
     JSONObject json;
+
     Metadata metadata;
     Cells c;
-    Map<String, Features> features;
-    Map<String,Cells> cell;
-    Map<String,Map> products;
+    LinkedHashMap<String, Features> features;
+    LinkedHashMap<String,Cells> cell;
+    LinkedHashMap<String,Products> products;
 
-    public PCM (Map<String, Features> features, Map<String,Map> products){
-        this.features = features;
-        this.products = products;
+    public PCM (JSONObject json){
+        this.features = new LinkedHashMap<String, Features>();
+        this.products = new LinkedHashMap<String, Products>();
+        this.json = json;
+        setMetadata();
+        setFeatures();
+        setProducts();
     }
 
-    public Map<String, Map> getProducts(){
+    public Map<String, Products> getProducts(){
         return products;
     }
 
@@ -30,21 +34,8 @@ public class PCM  {
         features.put(id, feature);
     }
 
-    public void addProduct(String id){
-        cell = new LinkedHashMap<String, Cells>();
-        products.put(id, cell);
-    }
-
     public  void addCells(Cells c, String idProduct){
-        products.get(idProduct).put(c.getFeatureId(), c);
-    }
-
-    public void setJson(JSONObject json) {
-        this.json = json;
-    }
-
-    public JSONObject getJson() {
-        return json;
+        products.get(idProduct).getCells().put(c.getFeatureId(), c);
     }
 
     private String notNull(String key) {
@@ -76,57 +67,63 @@ public class PCM  {
         }
     }
 
-    public void setProductsCells(){
+    public void setProducts(){
         try{
             JSONArray productsJson = json.getJSONArray("products");
             for(int i = 0; i< productsJson.length(); i++){
                 String id = productsJson.getJSONObject(i).getString("id");
                 JSONArray cellsJson = productsJson.getJSONObject(i).getJSONArray("cells");
-                addProduct(id);
-                for (int y =0; y < cellsJson.length();y++) {
-                    JSONObject cellJson = cellsJson.getJSONObject(y);
-                    Object value;
-                    String type = cellJson.getString("type");
-                    String s ="";
-                    if((type.equals("number") || type.equals("undefined")) || (type.equals("number") && type.equals("undefined") )) {
-                    }else{
-                        s = cellJson.getString("value");
-                    }
-                    switch(type) {
-                        case "boolean" :
-                            boolean bool = Boolean.parseBoolean(s);
-                            value = bool;
-                            break;
-                        case "number" :
-                            Double d = cellJson.getDouble("value");
-                            if ((d == Math.floor(d)) && !Double.isInfinite(d)) {
-                                Integer n = cellJson.getInt("value");
-                                value = n;
-                            }
-                            else{
-                                value = d;
-                            }
-                            break;
-                        case "undefined":
-                            value = JSONObject.NULL;
-                            break;
-
-                        default:
-                            value = s;
-                            break;
-                    }
-                    String t = cellJson.getString("type");
-                    String unit = cellJson.getString("unit");
-                    Boolean isPartial = cellJson.getBoolean("isPartial");
-                    String featureId = cellJson.getString("featureId");
-                    c = new Cells(featureId, t, unit, value, isPartial);
-                    addCells(c, id);
-                }
+                cell = new LinkedHashMap<String, Cells>();
+                Products product = new Products(id, cell);
+                products.put(id, product);
+                setCell(cellsJson, id);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        System.out.println(getProducts().get("P0").get("F0").toString());
+        System.out.println(getProducts().get("P0").getCells().get("F0").toString());
+    }
+
+    public void setCell(JSONArray cellsJson, String id) {
+        for (int y =0; y < cellsJson.length();y++) {
+            JSONObject cellJson = cellsJson.getJSONObject(y);
+            Object value;
+            String type = cellJson.getString("type");
+            String s ="";
+            if((type.equals("number") || type.equals("undefined")) || (type.equals("number") && type.equals("undefined") )) {
+            }else{
+                s = cellJson.getString("value");
+            }
+            switch(type) {
+                case "boolean" :
+                    boolean bool = Boolean.parseBoolean(s);
+                    value = bool;
+                    break;
+                case "number" :
+                    Double d = cellJson.getDouble("value");
+                    if ((d == Math.floor(d)) && !Double.isInfinite(d)) {
+                        Integer n = cellJson.getInt("value");
+                        value = n;
+                    }
+                    else{
+                        value = d;
+                    }
+                    break;
+                case "undefined":
+                    value = JSONObject.NULL;
+                    break;
+
+                default:
+                    value = s;
+                    break;
+            }
+            String t = cellJson.getString("type");
+            String unit = cellJson.getString("unit");
+            Boolean isPartial = cellJson.getBoolean("isPartial");
+            String featureId = cellJson.getString("featureId");
+            c = new Cells(featureId, t, unit, value, isPartial);
+            addCells(c, id);
+        }
     }
 
     public JSONObject featureToJson(JSONObject j) {
@@ -138,13 +135,13 @@ public class PCM  {
 
     public JSONObject productToJson(JSONObject j) {
         products.forEach((k,v) -> {
-            JSONObject o = new JSONObject();
-            o.put("id", k);
-            v.forEach((k1, v1) -> {
-                o.accumulate("cells", new JSONObject(v1));
-            });
-            j.accumulate("products", o);
+        JSONObject o = new JSONObject();
+        o.put("id", k);
+        v.getCells().forEach((k1, v1) -> {
+            o.accumulate("cells", new JSONObject(v1));
         });
+        j.accumulate("products", o);
+    });
         return j;
     }
 
