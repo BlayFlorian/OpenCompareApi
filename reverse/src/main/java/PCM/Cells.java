@@ -36,26 +36,6 @@ public class Cells {
         return isPartial;
     }
 
-    public void setFeatureId(String featureId) {
-        this.featureId = featureId;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public void setValue(Object value) {
-        this.value = value;
-    }
-
-    public void setPartial(boolean partial) {
-        isPartial = partial;
-    }
-
     @Override
     public String toString() {
         return "featureId: "+ featureId+ "type: " + type + ", isPartial: "+isPartial + ", unit: " +unit + ", value: " +value;

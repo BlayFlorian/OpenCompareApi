@@ -1,12 +1,10 @@
 package PCM;
 
-import org.json.JSONObject;
-
 public class Features {
 
-    String name;
-    String type;
-    String id;
+    private String name;
+    private String type;
+    private String id;
 
     public Features(String name, String type, String id) {
         this.id = id;
@@ -18,16 +16,8 @@ public class Features {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getType() {
         return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getId() {
@@ -37,12 +27,5 @@ public class Features {
     public void setId(String id) {
         this.id = id;
     }
-    @Override
-    public String toString() {
-        return "id " + id + " name " + name + " type " + type;
-    }
-
-    public JSONObject toJson() {
-        return new JSONObject(this);
-    }
+    
 }

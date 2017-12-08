@@ -5,8 +5,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.*;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Real;
-
 public class PCM  {
 
     JSONObject json;
@@ -81,7 +79,6 @@ public class PCM  {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        System.out.println(getProducts().get("P0").getCells().get("F0").toString());
     }
 
     public void setCell(JSONArray cellsJson, String id) {
@@ -89,13 +86,10 @@ public class PCM  {
             JSONObject cellJson = cellsJson.getJSONObject(y);
             Object value;
             String type = cellJson.getString("type");
-            String s ="";
-            if((type.equals("number") || type.equals("undefined")) || (type.equals("number") && type.equals("undefined") )) {
-            }else{
-                s = cellJson.getString("value");
-            }
+            String s;
             switch(type) {
                 case "boolean" :
+                    s = cellJson.getString("value");
                     boolean bool = Boolean.parseBoolean(s);
                     value = bool;
                     break;
@@ -114,6 +108,7 @@ public class PCM  {
                     break;
 
                 default:
+                    s = cellJson.getString("value");
                     value = s;
                     break;
             }
@@ -137,9 +132,7 @@ public class PCM  {
         products.forEach((k,v) -> {
         JSONObject o = new JSONObject();
         o.put("id", k);
-        v.getCells().forEach((k1, v1) -> {
-            o.accumulate("cells", new JSONObject(v1));
-        });
+        v.getCells().forEach((k1, v1) -> o.accumulate("cells", new JSONObject(v1)));
         j.accumulate("products", o);
     });
         return j;
@@ -164,10 +157,6 @@ public class PCM  {
             mapInt.put("featureIdGen", json.getInt("featureIdGen"));
             mapInt.put("productIdGen", json.getInt("productIdGen"));
             metadata = new Metadata(mapString, mapInt);
-            System.out.println("--------------------");
-            System.out.println(metadata.toString());
-            System.out.println("-----------------");
-
         } catch (Exception e){
             e.printStackTrace();
         }

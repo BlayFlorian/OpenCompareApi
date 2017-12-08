@@ -7,30 +7,30 @@ import PCM.*;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class apiOpenCompare
 {
     public static void main(String[] args) throws IOException {
-        String myURL = "https://opencompare.org/api/59c3d669384f2b07bbda544c";
+        System.out.println("Entrez un id");
+        Scanner sc = new Scanner(System.in);
+        String id = sc.nextLine();
+        String myURL = "https://opencompare.org/api/" + id;
+
         ApiCall call = new ApiCall(myURL);
         JSONObject json = call.getJsonObj();
+
         PCM pcm = new PCM(json);
-        pcm.getMetadata().setAuthor("FLorian");
+
         PCMExport pcmExport = new PCMExport(pcm);
 
-        JSONObject jsonObject2 = pcmExport.getJson();
-        PCM pcm2 = new PCM(jsonObject2);
+        JSONObject json2 = pcmExport.getJson();
 
-        PCMExport pcmExport1 = new PCMExport(pcm2);
-
+        //Comparaison
         ObjectMapper mapper = new ObjectMapper();
-
         JsonNode tree1 = mapper.readTree(json.toString());
-        JsonNode tree2 = mapper.readTree(jsonObject2.toString());
-
+        JsonNode tree2 = mapper.readTree(json2.toString());
         System.out.println(tree1.equals(tree2));
-
-
-        System.out.println(pcmExport1.getJson().toString());
+        System.out.println(json2.toString());
     }
 }
