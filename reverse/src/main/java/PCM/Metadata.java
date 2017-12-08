@@ -3,6 +3,8 @@ package PCM;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Map;
+
 public class Metadata {
 
     private String author;
@@ -15,19 +17,17 @@ public class Metadata {
     private int productIdGen;
     private String _id;
 
-    public Metadata(){
+    public Metadata(Map<String, String> metadataString, Map<String, Integer> metadataInt){
 
-    }
-    public Metadata(String author, String source, String description, String licence,String name,int featureIdGen,String primaryFeatureId, int productIdGen, String _id){
-        this.author = author;
-        this.source = source;
-        this.description = description;
-        this.license = licence;
-        this.name = name;
-        this.featureIdGen = featureIdGen;
-        this.primaryFeatureId = primaryFeatureId;
-        this.productIdGen = productIdGen;
-        this._id = _id;
+        this.author = metadataString.get("author");
+        this.source = metadataString.get("source");
+        this.description = metadataString.get("description");
+        this.license = metadataString.get("license");
+        this.name = metadataString.get("name");
+        this.featureIdGen = metadataInt.get("featureIdGen");
+        this.primaryFeatureId = metadataString.get("primaryFeatureId");
+        this.productIdGen = metadataInt.get("productIdGen");
+        this._id = metadataString.get("_id");
 
     }
 
@@ -111,6 +111,7 @@ public class Metadata {
     public JSONObject toJson() {
         JSONObject o = new JSONObject(this);
         o.put("_id", _id);
+        System.out.println(o.toString());
         return o;
     }
 }

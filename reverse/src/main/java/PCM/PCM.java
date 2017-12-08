@@ -1,5 +1,6 @@
 package PCM;
 
+import com.sun.istack.internal.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,8 +21,7 @@ public class PCM  {
     Map<String,Cells> cell;
     Map<String,Map> products;
 
-    public PCM (Metadata metadata,Map<String, Features> features, Map<String,Map> products){
-        this.metadata = metadata;
+    public PCM (Map<String, Features> features, Map<String,Map> products){
         this.features = features;
         this.products = products;
     }
@@ -42,9 +42,11 @@ public class PCM  {
     public  void addCells(Cells c, String idProduct){
         products.get(idProduct).put(c.getFeatureId(), c);
     }
+
     public void setJson(JSONObject json) {
         this.json = json;
     }
+
     public JSONObject getJson() {
         return json;
     }
@@ -59,22 +61,6 @@ public class PCM  {
         } catch (JSONException e) {
             e.printStackTrace();
             return "ERROR";
-        }
-    }
-    public void setMetadata() {
-        try {
-            metadata.setAuthor(notNull("author"));
-            metadata.setSource(notNull("source"));
-            metadata.setLicence(notNull("license"));
-            metadata.setName(notNull("name"));
-            metadata.setDescription(notNull("description"));
-            metadata.setFeatureIdGen(json.getInt("featureIdGen"));
-            metadata.setPrimaryFeatureId(notNull("primaryFeatureId"));
-            metadata.setProductIdGen(json.getInt("productIdGen"));
-            metadata.set_id(notNull("_id"));
-
-        } catch (Exception e){
-            e.printStackTrace();
         }
     }
 
@@ -103,7 +89,7 @@ public class PCM  {
                 addProduct(id);
                 for (int y =0; y < cellsJson.length();y++) {
                     JSONObject cellJson = cellsJson.getJSONObject(y);
-                    c = new Cells();
+                    Object value;
                     String type = cellJson.getString("type");
                     String s ="";
                     if((type.equals("number") || type.equals("undefined")) || (type.equals("number") && type.equals("undefined") )) {
@@ -111,42 +97,33 @@ public class PCM  {
                         s = cellJson.getString("value");
                     }
                     switch(type) {
-                        case "date":
-                            c.setValue(s);
-                           break;
-
-                        case "string":
-                            c.setValue(s);
-                            break;
-
                         case "boolean" :
                             boolean bool = Boolean.parseBoolean(s);
-                                c.setValue(bool);
+                            value = bool;
                             break;
                         case "number" :
                             Double d = cellJson.getDouble("value");
                             if ((d == Math.floor(d)) && !Double.isInfinite(d)) {
                                 Integer n = cellJson.getInt("value");
-                                c.setValue(n);
+                                value = n;
                             }
                             else{
-                                c.setValue(d);
+                                value = d;
                             }
-
                             break;
                         case "undefined":
-                            c.setValue(JSONObject.NULL);
+                            value = JSONObject.NULL;
                             break;
 
                         default:
-                            c.setValue(s);
-
+                            value = s;
+                            break;
                     }
-
-                    c.setType(cellJson.getString("type"));
-                    c.setUnit(cellJson.getString("unit"));
-                    c.setPartial(cellJson.getBoolean("isPartial"));
-                    c.setFeatureId(cellJson.getString("featureId"));
+                    String t = cellJson.getString("type");
+                    String unit = cellJson.getString("unit");
+                    Boolean isPartial = cellJson.getBoolean("isPartial");
+                    String featureId = cellJson.getString("featureId");
+                    c = new Cells(featureId, t, unit, value, isPartial);
                     addCells(c, id);
                 }
             }
@@ -175,6 +152,32 @@ public class PCM  {
         return j;
     }
 
+    public Metadata getMetadata(){
+        return metadata;
+    }
 
+    public void setMetadata() {
+        try {
+            Map<String, String> mapString = new HashMap<>();
+            mapString.put("author", notNull("author"));
+            mapString.put("source", notNull("source"));
+            mapString.put("license", notNull("license"));
+            mapString.put("name", notNull("name"));
+            mapString.put("description", notNull("description"));
+            mapString.put("primaryFeatureId", notNull("primaryFeatureId"));
+            mapString.put("_id", notNull("_id"));
+
+            Map<String, Integer> mapInt = new HashMap<>();
+            mapInt.put("featureIdGen", json.getInt("featureIdGen"));
+            mapInt.put("productIdGen", json.getInt("productIdGen"));
+            metadata = new Metadata(mapString, mapInt);
+            System.out.println("--------------------");
+            System.out.println(metadata.toString());
+            System.out.println("-----------------");
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }

@@ -10,8 +10,7 @@ public class Cells {
     private Object value;
     private boolean isPartial;
 
-    public Cells(){}
-    public Cells(String featureId,String type,String unit, String value, Boolean isPartial){
+    public Cells(String featureId,String type,String unit, Object value, Boolean isPartial){
         this.featureId = featureId;
         this.value = value;
         this.type =type;
@@ -66,6 +65,6 @@ public class Cells {
 
     @Override
     public String toString() {
-        return "FeaturId: "+ featureId+ "type: " + type + ", isPartial: "+isPartial + ", unit: " +unit + ", value: " +value;
+        return "featureId: "+ featureId+ "type: " + type + ", isPartial: "+isPartial + ", unit: " +unit + ", value: " +value;
     }
 }

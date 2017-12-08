@@ -14,15 +14,11 @@ public class apiOpenCompare
         JSONObject json = call.getJsonObj();
         LinkedHashMap features = new LinkedHashMap<String, Features>();
         LinkedHashMap products = new LinkedHashMap<String,Map>();
-        Metadata metadata = new Metadata();
-        PCM pcm = pcm = new PCM(metadata,features,products);
+        PCM pcm = new PCM(features,products);
         pcm.setJson(json);
         pcm.setMetadata();
         pcm.setFeatures();
         pcm.setProductsCells();
         PCMExport pcmExport = new PCMExport(pcm);
-        System.out.println(metadata.toString());
-
-
     }
 }
