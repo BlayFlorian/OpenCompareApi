@@ -1,5 +1,7 @@
 package PCM;
 
+import org.json.JSONObject;
+
 public class Cells {
 
     private String featureId;
@@ -16,11 +18,27 @@ public class Cells {
         this.type =type;
         this.unit = unit;
         this.isPartial = isPartial;
-        setType();
+        this.setType();
     }
 
     public String getFeatureId() {
         return featureId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public Boolean getIsPartial() {
+        return isPartial;
     }
 
     public void setFeatureId(String featureId) {
@@ -47,6 +65,7 @@ public class Cells {
             valueInt = Integer.parseInt(value);
         }
     }
+
     @Override
     public String toString() {
         return "FeaturId: "+ featureId+ "type: " + type + ", isPartial: "+isPartial + ", unit: " +unit + ", value: " +value;

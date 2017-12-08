@@ -10,7 +10,6 @@ public class PCM {
 
     JSONObject json;
     Metadata metadata;
-    Features feature;
     Cells c;
     Map<String, Features> features;
     Map<String,Cells> cell;
@@ -20,10 +19,6 @@ public class PCM {
         this.metadata = metadata;
         this.features = features;
         this.products = products;
-      //  features = new HashMap<String, Features>();
-      //  products = new HashMap<String,Map>();
-        feature = new Features();
-
     }
 
     public Map<String, Map> getProducts(){
@@ -82,11 +77,11 @@ public class PCM {
         try {
             JSONArray features = json.getJSONArray("features");
             for(int i = 0; i < features.length(); i++) {
-                feature.setName(features.getJSONObject(i).getString("name"));
-                feature.setType(features.getJSONObject(i).getString("type"));
+                String name = features.getJSONObject(i).getString("name");
+                String type = features.getJSONObject(i).getString("type");
                 String id = features.getJSONObject(i).getString("id");
-
-                addFeatures(id,feature);
+                Features feat = new Features(name, type, id);
+                addFeatures(id,feat);
             }
 
         } catch (Exception e) {
@@ -121,6 +116,26 @@ public class PCM {
         }
         System.out.println(getProducts().get("P0").get("F5").toString());
     }
+
+    public JSONObject featureToJson(JSONObject j) {
+        features.forEach((k,v) -> {
+            j.accumulate("features", new JSONObject(features.get(k)));
+        });
+        return j;
+    }
+
+    public JSONObject productToJson(JSONObject j) {
+        products.forEach((k,v) -> {
+            JSONObject o = new JSONObject();
+            o.put("id", k);
+            v.forEach((k1, v1) -> {
+                o.accumulate("cells", new JSONObject(v1));
+            });
+            j.accumulate("products", o);
+        });
+        return j;
+    }
+
 
 
 }

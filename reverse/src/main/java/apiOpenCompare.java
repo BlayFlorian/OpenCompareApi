@@ -9,7 +9,7 @@ public class apiOpenCompare
 {
     public static void main(String[] args) {
 
-        String myURL = "https://opencompare.org/api/59b146841ce2640a4802dfac";
+        String myURL = "https://opencompare.org/api/595cc1de6fa1b228f5eefee9";
         ApiCall call = new ApiCall(myURL);
         JSONObject json = call.getJsonObj();
         Map features = new HashMap<String, Features>();
@@ -20,7 +20,7 @@ public class apiOpenCompare
         pcm.setMetadata();
         pcm.setFeatures();
         pcm.setProductsCells();
-
+        PCMExport pcmExport = new PCMExport(pcm);
         System.out.println(metadata.toString());
 
 

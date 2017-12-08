@@ -8,7 +8,7 @@ public class Metadata {
     private String author;
     private String source;
     private String description;
-    private String licence;
+    private String license;
     private String name;
     private int featureIdGen;
     private String primaryFeatureId;
@@ -22,7 +22,7 @@ public class Metadata {
         this.author = author;
         this.source = source;
         this.description = description;
-        this.licence = licence;
+        this.license = licence;
         this.name = name;
         this.featureIdGen = featureIdGen;
         this.primaryFeatureId = primaryFeatureId;
@@ -43,8 +43,8 @@ public class Metadata {
         return description;
     }
 
-    public String getLicence() {
-        return licence;
+    public String getLicense() {
+        return license;
     }
 
     public String getName() {
@@ -66,6 +66,7 @@ public class Metadata {
     public String get_id() {
         return _id;
     }
+
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -78,8 +79,8 @@ public class Metadata {
         this.description = description;
     }
 
-    public void setLicence(String licence) {
-        this.licence = licence;
+    public void setLicence(String license) {
+        this.license = license;
     }
 
     public void setName(String name) {
@@ -104,7 +105,7 @@ public class Metadata {
 
     @Override
     public String toString() {
-        return "author: "+ author + " Name: " +name + " Source: "+ source + " Description: " + description + " Licence: " + licence;
+        return "author: "+ author + " Name: " +name + " Source: "+ source + " Description: " + description + " Licence: " + license;
     }
 
     public JSONObject toJson() {
