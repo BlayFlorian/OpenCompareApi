@@ -8,7 +8,6 @@ import java.util.Map;
 public class apiOpenCompare
 {
     public static void main(String[] args) {
-
         String myURL = "https://opencompare.org/api/595cc1de6fa1b228f5eefee9";
         ApiCall call = new ApiCall(myURL);
         JSONObject json = call.getJsonObj();
