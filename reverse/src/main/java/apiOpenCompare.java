@@ -2,7 +2,6 @@ import org.json.JSONObject;
 import webService.ApiCall;
 import PCM.*;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -19,6 +18,6 @@ public class apiOpenCompare
         pcm.setMetadata();
         pcm.setFeatures();
         pcm.setProductsCells();
-        PCMExport pcmExport = new PCMExport(pcm);
+        new PCMExport(pcm);
     }
 }

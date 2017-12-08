@@ -1,6 +1,5 @@
 package PCM;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Map;
@@ -111,7 +110,6 @@ public class Metadata {
     public JSONObject toJson() {
         JSONObject o = new JSONObject(this);
         o.put("_id", _id);
-        System.out.println(o.toString());
         return o;
     }
 }

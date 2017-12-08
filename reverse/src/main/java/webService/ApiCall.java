@@ -13,7 +13,6 @@ public class ApiCall {
     JSONObject jsonObj;
 
     public ApiCall(String myURL) {
-        System.out.println("Requeted URL:" + myURL);
         StringBuilder sb = new StringBuilder();
         URLConnection urlConn = null;
         InputStreamReader in = null;
@@ -42,7 +41,6 @@ public class ApiCall {
         try {
             jsonObj = new JSONObject(sb.toString());
         } catch (JSONException e) {
-            System.out.println("rer");
             e.printStackTrace();
         }
     }

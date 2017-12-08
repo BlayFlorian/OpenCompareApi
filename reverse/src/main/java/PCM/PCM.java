@@ -4,10 +4,6 @@ import com.sun.istack.internal.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Real;
@@ -66,13 +62,13 @@ public class PCM  {
 
     public void setFeatures(){
         try {
-            JSONArray features = json.getJSONArray("features");
-            for(int i = 0; i < features.length(); i++) {
-                String name = features.getJSONObject(i).getString("name");
-                String type = features.getJSONObject(i).getString("type");
-                String id = features.getJSONObject(i).getString("id");
-                Features feat = new Features(name, type, id);
-                addFeatures(id,feat);
+            JSONArray feat = json.getJSONArray("features");
+            for(int i = 0; i < feat.length(); i++) {
+                String name = feat.getJSONObject(i).getString("name");
+                String type = feat.getJSONObject(i).getString("type");
+                String id = feat.getJSONObject(i).getString("id");
+                Features feature = new Features(name, type, id);
+                addFeatures(id,feature);
             }
 
         } catch (Exception e) {
