@@ -36,12 +36,15 @@ public class PCM  {
         products.get(idProduct).getCells().put(c.getFeatureId(), c);
     }
 
-    private String notNull(String key) {
+    private Object notNull(String key) {
         Object obj;
         try {
             obj = json.get(key);
-            if(obj ==null )
-            { return "null"; }
+            System.out.println(obj.toString());
+            if(obj == JSONObject.NULL )
+            {
+                return JSONObject.NULL;
+            }
             else { return  obj.toString(); }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -144,19 +147,18 @@ public class PCM  {
 
     public void setMetadata() {
         try {
-            Map<String, String> mapString = new HashMap<>();
-            mapString.put("author", notNull("author"));
-            mapString.put("source", notNull("source"));
-            mapString.put("license", notNull("license"));
-            mapString.put("name", notNull("name"));
-            mapString.put("description", notNull("description"));
-            mapString.put("primaryFeatureId", notNull("primaryFeatureId"));
-            mapString.put("_id", notNull("_id"));
+            Map<String, Object> map = new HashMap<>();
+            map.put("author", notNull("author"));
+            map.put("source", notNull("source"));
+            map.put("license", notNull("license"));
+            map.put("name", notNull("name"));
+            map.put("description", notNull("description"));
+            map.put("primaryFeatureId", notNull("primaryFeatureId"));
+            map.put("_id", notNull("_id"));
 
-            Map<String, Integer> mapInt = new HashMap<>();
-            mapInt.put("featureIdGen", json.getInt("featureIdGen"));
-            mapInt.put("productIdGen", json.getInt("productIdGen"));
-            metadata = new Metadata(mapString, mapInt);
+            map.put("featureIdGen", json.getInt("featureIdGen"));
+            map.put("productIdGen", json.getInt("productIdGen"));
+            metadata = new Metadata(map);
         } catch (Exception e){
             e.printStackTrace();
         }

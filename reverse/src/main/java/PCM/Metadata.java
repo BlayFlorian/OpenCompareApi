@@ -6,99 +6,99 @@ import java.util.Map;
 
 public class Metadata {
 
-    private String author;
-    private String source;
-    private String description;
-    private String license;
-    private String name;
-    private int featureIdGen;
-    private String primaryFeatureId;
-    private int productIdGen;
-    private String _id;
+    private Object author;
+    private Object source;
+    private Object description;
+    private Object license;
+    private Object name;
+    private Object featureIdGen;
+    private Object primaryFeatureId;
+    private Object productIdGen;
+    private Object _id;
 
-    public Metadata(Map<String, String> metadataString, Map<String, Integer> metadataInt){
+    public Metadata(Map<String, Object> metadata){
 
-        this.author = metadataString.get("author");
-        this.source = metadataString.get("source");
-        this.description = metadataString.get("description");
-        this.license = metadataString.get("license");
-        this.name = metadataString.get("name");
-        this.featureIdGen = metadataInt.get("featureIdGen");
-        this.primaryFeatureId = metadataString.get("primaryFeatureId");
-        this.productIdGen = metadataInt.get("productIdGen");
-        this._id = metadataString.get("_id");
+        this.author = metadata.get("author");
+        this.source = metadata.get("source");
+        this.description = metadata.get("description");
+        this.license = metadata.get("license");
+        this.name = metadata.get("name");
+        this.featureIdGen = metadata.get("featureIdGen");
+        this.primaryFeatureId = metadata.get("primaryFeatureId");
+        this.productIdGen = metadata.get("productIdGen");
+        this._id = metadata.get("_id");
 
     }
 
-    public String getAuthor() {
+    public Object getAuthor() {
         return author;
     }
 
-    public String getSource() {
+    public Object getSource() {
         return source;
     }
 
-    public String getDescription() {
+    public Object getDescription() {
         return description;
     }
 
-    public String getLicense() {
+    public Object getLicense() {
         return license;
     }
 
-    public String getName() {
+    public Object getName() {
         return name;
     }
 
-    public int getFeatureIdGen() {
+    public Object getFeatureIdGen() {
         return featureIdGen;
     }
 
-    public String getPrimaryFeatureId() {
+    public Object getPrimaryFeatureId() {
         return primaryFeatureId;
     }
 
-    public int getProductIdGen() {
+    public Object getProductIdGen() {
         return productIdGen;
     }
 
-    public String get_id() {
+    public Object get_id() {
         return _id;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Object author) {
         this.author = author;
     }
 
-    public void setSource(String source) {
+    public void setSource(Object source) {
         this.source = source;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(Object description) {
         this.description = description;
     }
 
-    public void setLicence(String license) {
+    public void setLicence(Object license) {
         this.license = license;
     }
 
-    public void setName(String name) {
+    public void setName(Object name) {
         this.name = name;
     }
 
-    public void setFeatureIdGen(int featureIdGen) {
+    public void setFeatureIdGen(Object featureIdGen) {
         this.featureIdGen = featureIdGen;
     }
 
-    public void setPrimaryFeatureId(String primaryFeatureId) {
+    public void setPrimaryFeatureId(Object primaryFeatureId) {
         this.primaryFeatureId = primaryFeatureId;
     }
 
-    public void setProductIdGen(int productIdGen) {
+    public void setProductIdGen(Object productIdGen) {
         this.productIdGen = productIdGen;
     }
 
-    public void set_id(String _id) {
+    public void set_id(Object _id) {
         this._id = _id;
     }
 
