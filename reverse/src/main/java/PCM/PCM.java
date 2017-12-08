@@ -7,10 +7,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.SimpleTimeZone;
+import java.util.*;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Real;
 
@@ -38,7 +35,7 @@ public class PCM  {
     }
 
     public void addProduct(String id){
-        cell = new HashMap<String, Cells>();
+        cell = new LinkedHashMap<String, Cells>();
         products.put(id, cell);
     }
 
@@ -53,11 +50,10 @@ public class PCM  {
     }
 
     private String notNull(String key) {
-
         Object obj;
         try {
             obj = json.get(key);
-            if(obj ==null || obj.toString().length()==0)
+            if(obj ==null )
             { return "null"; }
             else { return  obj.toString(); }
         } catch (JSONException e) {
@@ -116,13 +112,7 @@ public class PCM  {
                     }
                     switch(type) {
                         case "date":
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-                            try {
-                                Date d = sdf.parse(s);
-                                c.setValue(d);
-                            } catch (ParseException e) {
-                                e.printStackTrace();
-                            }
+                            c.setValue(s);
                            break;
 
                         case "string":
@@ -145,7 +135,8 @@ public class PCM  {
 
                             break;
                         case "undefined":
-                            c.setValue(null);
+                            c.setValue(JSONObject.NULL);
+                            break;
 
                         default:
                             c.setValue(s);

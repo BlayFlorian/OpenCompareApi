@@ -8,7 +8,6 @@ public class Cells {
     private String type ;
     private String unit;
     private Object value;
-    private int valueInt;
     private boolean isPartial;
 
     public Cells(){}
@@ -33,7 +32,7 @@ public class Cells {
         return unit;
     }
 
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 

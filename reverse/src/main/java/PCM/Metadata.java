@@ -105,10 +105,12 @@ public class Metadata {
 
     @Override
     public String toString() {
-        return "author: "+ author + " Name: " +name + " Source: "+ source + " Description: " + description + " Licence: " + license;
+        return "id " + _id + " author: "+ author + " Name: " +name + " Source: "+ source + " Description: " + description + " Licence: " + license;
     }
 
     public JSONObject toJson() {
-        return new JSONObject(this);
+        JSONObject o = new JSONObject(this);
+        o.put("_id", _id);
+        return o;
     }
 }
