@@ -5,37 +5,39 @@ The OpenCompare Api enables us to manipulate json files which are taken from the
 ## Development tools
 
 * [IntellJ IDEA](https://www.jetbrains.com/idea/) - Java integrated development environment 
+* [Maven](https://maven.apache.org/) - Java integrated development environment 
+
 
 ## Libraries And depedencies
 
 * [JsonLibrary](http://www.java2s.com/Code/Jar/j/Downloadjavajsonjar.htm) - Json Java library
+* [JacksonLibrary](http://www.java2s.com/Code/Jar/j/Downloadjacksonmapperasl120jar.htm) - Jackson library
 
-## Getting Started(dernier point après la demande du vidéo screen cast)
+```
+These libraries are already present in the pom XML since we are also using Maven.
+```
 
-* étape 1 
+
+## Getting Started
+
+* You can copy the link of the json from the website [OpenCompare2](https://opencompare.org/).
 ```
-Exemple
+It should look like this : https://opencompare.org/pcm/5a17ec1e086cfd088ff72de9
 ```
-* étape 2
+* Use the link to generate the PCM.
 ```
-Exemple
+In the class ApiOpenCompare paste the link.
 ```
-* étape 3
+* Run the application then you will get the PCM (java objects).
+
+* Export your PCM into Json format and test if the Json imported is similar to the Json exported
 ```
-Exemple
-```
-* étape 4
-```
-Exemple
+You can  use the jackson library to check their similarity 
 ```
 
 ## Result
 
 
-
-## Running the tests(??????)
-
-Si on fait les tests
 
 ## License
 
@@ -43,7 +45,7 @@ This project is licensed under the Apache license  Version 2.0- see the [LICENSE
 
 ## Project architecture
 
-* Ici l'architecture
-* Encore l'architecture
-* et puis ... l'architecture quoi
+*[Architecture](https://imgur.com/a/zrEAI)
+
+
 
