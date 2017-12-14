@@ -36,8 +36,4 @@ public class Cells {
         return isPartial;
     }
 
-    @Override
-    public String toString() {
-        return "featureId: "+ featureId+ "type: " + type + ", isPartial: "+isPartial + ", unit: " +unit + ", value: " +value;
-    }
 }

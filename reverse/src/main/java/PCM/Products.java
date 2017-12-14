@@ -11,10 +11,6 @@ public class Products {
     }
 
 
-    public String toString() {
-        return "id: "+ id;
-    }
-
     public String getId() {
         return id;
     }
