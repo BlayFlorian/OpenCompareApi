@@ -128,7 +128,6 @@ public class PCM  {
     }
 
     public JSONObject featureToJson(JSONObject j) {
-        System.out.println(features.size());
         if(features.size() > 1) {
             features.forEach((k,v) -> {
                 j.accumulate("features", new JSONObject(features.get(k)));
