@@ -9,6 +9,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * @author Lucile FLOC, Florian BLAY, Nicolas RANNOU, Briac PERRIN, Othmane WAFI
+ * Classe ApiOpenCompare qui est exécuté
+ */
 public class ApiOpenCompare
 {
     public static void main(String[] args) throws IOException {
