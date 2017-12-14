@@ -43,7 +43,7 @@ public class ApiOpenCompare
             } else if(t.equals("m")) {
                 System.out.println("Modification de l'auteur");
                 Scanner scA = new Scanner(System.in);
-                String auteur = scF.nextLine();
+                String auteur = scA.nextLine();
                 pcm.getMetadata().setAuthor(auteur);
                 PCMExport pcmExport2 = new PCMExport(pcm);
                 JSONObject json3 = pcmExport2.getJson();
@@ -51,7 +51,6 @@ public class ApiOpenCompare
                 System.out.println("Json généré:");
                 System.out.println(json3.toString());
                 //Comparaison
-                ObjectMapper mapper1 = new ObjectMapper();
                 JsonNode tree3 = mapper.readTree(json.toString());
                 JsonNode tree4 = mapper.readTree(json3.toString());
                 System.out.println("Identique: " + tree3.equals(tree4));

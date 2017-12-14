@@ -62,9 +62,6 @@ public class Metadata {
         return productIdGen;
     }
 
-    public Object get_id() {
-        return _id;
-    }
 
     public void setAuthor(Object author) {
         this.author = author;
@@ -100,11 +97,6 @@ public class Metadata {
 
     public void set_id(Object _id) {
         this._id = _id;
-    }
-
-    @Override
-    public String toString() {
-        return "id " + _id + " author: "+ author + " Name: " +name + " Source: "+ source + " Description: " + description + " Licence: " + license;
     }
 
     public JSONObject toJson() {
