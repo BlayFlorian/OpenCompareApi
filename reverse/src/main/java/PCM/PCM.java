@@ -106,7 +106,11 @@ public class PCM  {
                     }
                     break;
                 case "undefined":
-                    value = JSONObject.NULL;
+                    if(cellJson.getString("value") == JSONObject.NULL) {
+                        value = JSONObject.NULL;
+                    } else {
+                        value = cellJson.getString("value");
+                    }
                     break;
 
                 default:
