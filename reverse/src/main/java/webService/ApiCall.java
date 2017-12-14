@@ -9,9 +9,21 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 
+/**
+ * @author Lucile FLOC, Florian BLAY, Nicolas RANNOU, Briac PERRIN, Othmane WAFI
+ * Classe ApiCall
+ */
 public class ApiCall {
+
+    /**
+     * Propriétés privées
+     */
     JSONObject jsonObj;
 
+    /**
+     * Constructeur de la classe ApiCall
+     * @param myURL
+     */
     public ApiCall(String myURL) {
         StringBuilder sb = new StringBuilder();
         URLConnection urlConn = null;
@@ -45,6 +57,10 @@ public class ApiCall {
         }
     }
 
+    /**
+     * Getter
+     * @return l'objet json
+     */
     public JSONObject getJsonObj() {
         return jsonObj;
     }

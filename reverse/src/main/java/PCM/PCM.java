@@ -5,37 +5,66 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.*;
 
+/**
+ * @author Lucile FLOC, Florian BLAY, Nicolas RANNOU, Briac PERRIN, Othmane WAFI
+ * Classe qui gère la création du PCM
+ */
 public class PCM  {
 
+    /**
+     * Propriétés privées
+     */
     JSONObject json;
-
     Metadata metadata;
-    Cells c;
-    LinkedHashMap<String, Features> features;
-    LinkedHashMap<String,Cells> cell;
-    LinkedHashMap<String,Products> products;
+    Cell c;
+    LinkedHashMap<String, Feature> features;
+    LinkedHashMap<String, Cell> cell;
+    LinkedHashMap<String, Product> products;
 
+    /**
+     * Constructeur de la classe PCM
+     * @param json
+     */
     public PCM (JSONObject json){
-        this.features = new LinkedHashMap<String, Features>();
-        this.products = new LinkedHashMap<String, Products>();
+        this.features = new LinkedHashMap<String, Feature>();
+        this.products = new LinkedHashMap<String, Product>();
         this.json = json;
         setMetadata();
         setFeatures();
         setProducts();
     }
 
-    public Map<String, Products> getProducts(){
+    /**
+     * Getter
+     * @return les products
+     */
+    public Map<String, Product> getProducts(){
         return products;
     }
 
-    public void addFeatures(String id, Features feature) {
+    /**
+     * Ajoute les features dans le nouveau PCM
+     * @param id
+     * @param feature
+     */
+    public void addFeatures(String id, Feature feature) {
         features.put(id, feature);
     }
 
-    public  void addCells(Cells c, String idProduct){
+    /**
+     * Ajoute les cells dans le nouveau PCM
+     * @param c
+     * @param idProduct
+     */
+    public  void addCells(Cell c, String idProduct){
         products.get(idProduct).getCells().put(c.getFeatureId(), c);
     }
 
+    /**
+     * Gère si l'objet est null
+     * @param key
+     * @return le type de l'objet null ou string
+     */
     private Object notNull(String key) {
         Object obj;
         try {
@@ -51,6 +80,9 @@ public class PCM  {
         }
     }
 
+    /**
+     * Ajoute les features au PCM
+     */
     public void setFeatures(){
         try {
             JSONArray feat = json.getJSONArray("features");
@@ -58,7 +90,7 @@ public class PCM  {
                 String name = feat.getJSONObject(i).getString("name");
                 String type = feat.getJSONObject(i).getString("type");
                 String id = feat.getJSONObject(i).getString("id");
-                Features feature = new Features(name, type, id);
+                Feature feature = new Feature(name, type, id);
                 addFeatures(id,feature);
             }
 
@@ -67,14 +99,17 @@ public class PCM  {
         }
     }
 
+    /**
+     * Ajoute les products au PCM
+     */
     public void setProducts(){
         try{
             JSONArray productsJson = json.getJSONArray("products");
             for(int i = 0; i< productsJson.length(); i++){
                 String id = productsJson.getJSONObject(i).getString("id");
                 JSONArray cellsJson = productsJson.getJSONObject(i).getJSONArray("cells");
-                cell = new LinkedHashMap<String, Cells>();
-                Products product = new Products(id, cell);
+                cell = new LinkedHashMap<String, Cell>();
+                Product product = new Product(id, cell);
                 products.put(id, product);
                 setCell(cellsJson, id);
             }
@@ -83,6 +118,11 @@ public class PCM  {
         }
     }
 
+    /**
+     * Ajoute les cellules au PCM et gère le type
+     * @param cellsJson
+     * @param id
+     */
     public void setCell(JSONArray cellsJson, String id) {
         for (int y =0; y < cellsJson.length();y++) {
             JSONObject cellJson = cellsJson.getJSONObject(y);
@@ -122,11 +162,16 @@ public class PCM  {
             String unit = cellJson.getString("unit");
             Boolean isPartial = cellJson.getBoolean("isPartial");
             String featureId = cellJson.getString("featureId");
-            c = new Cells(featureId, t, unit, value, isPartial);
+            c = new Cell(featureId, t, unit, value, isPartial);
             addCells(c, id);
         }
     }
 
+    /**
+     * Transforme l'objet feature en JSON
+     * @param j
+     * @return l'objet json
+     */
     public JSONObject featureToJson(JSONObject j) {
         if(features.size() > 1) {
             features.forEach((k,v) -> {
@@ -136,6 +181,11 @@ public class PCM  {
         return j;
     }
 
+    /**
+     * Transforme l'objet product en JSON
+     * @param j
+     * @return l'objet json
+     */
     public JSONObject productToJson(JSONObject j) {
         products.forEach((k,v) -> {
         JSONObject o = new JSONObject();
@@ -146,10 +196,17 @@ public class PCM  {
         return j;
     }
 
+    /**
+     * Getter
+     * @return metadata
+     */
     public Metadata getMetadata(){
         return metadata;
     }
 
+    /**
+     * Ajoute les metadata au PCM
+     */
     public void setMetadata() {
         try {
             Map<String, Object> map = new HashMap<>();

@@ -8,10 +8,13 @@ import webService.ApiCall;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author Lucile FLOC, Florian BLAY, Nicolas RANNOU, Briac PERRIN, Othmane WAFI
+ * Classe de test des PCM
+ */
 public class PCMTest {
     @Test
     public void getProducts() throws Exception {
@@ -63,7 +66,7 @@ public class PCMTest {
         m.setName("name");
         m.setSource("source");
         m.setProductIdGen("1");
-        Map<String, Products> products = pcm.getProducts();
+        Map<String, Product> products = pcm.getProducts();
         products.forEach((k,v)-> {products.get(k).getId();});
 
         PCMExport pcmExport2 = new PCMExport(pcm);
