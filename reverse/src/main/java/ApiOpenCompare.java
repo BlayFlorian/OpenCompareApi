@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class apiOpenCompare
+public class ApiOpenCompare
 {
     public static void main(String[] args) throws IOException {
         System.out.println("Entrez un id");

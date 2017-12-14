@@ -40,7 +40,6 @@ public class PCM  {
         Object obj;
         try {
             obj = json.get(key);
-            System.out.println(obj.toString());
             if(obj == JSONObject.NULL )
             {
                 return JSONObject.NULL;
@@ -125,9 +124,12 @@ public class PCM  {
     }
 
     public JSONObject featureToJson(JSONObject j) {
-        features.forEach((k,v) -> {
-            j.accumulate("features", new JSONObject(features.get(k)));
-        });
+        System.out.println(features.size());
+        if(features.size() > 1) {
+            features.forEach((k,v) -> {
+                j.accumulate("features", new JSONObject(features.get(k)));
+            });
+        }
         return j;
     }
 
