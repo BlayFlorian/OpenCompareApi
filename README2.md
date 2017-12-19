@@ -38,6 +38,8 @@ You can  use the jackson library to check their similarity
 ## Result
 
 It is now possible to import Json and transofrm them into PCM using the Java Api, and using these PCMs to generate a Json file.
+It is also possible to check the similarity between two Json's files , the one imported and the one generated.
+There is a new functionality that allows the client to modify the Source Json's, it is possible to make sure that an information has been changed by comparing both Json's
 
 
 ## License
