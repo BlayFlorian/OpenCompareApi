@@ -37,6 +37,7 @@ You can  use the jackson library to check their similarity
 
 ## Result
 
+It is now possible to import Json and transofrm them into PCM using the Java Api, and using these PCMs to generate a Json file.
 
 
 ## License
