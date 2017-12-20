@@ -48,7 +48,8 @@ This project is licensed under the Apache license  Version 2.0- see the [LICENSE
 
 ## Project architecture
 
-*[Architecture](https://imgur.com/a/zrEAI)
+[Architecture](https://imgur.com/a/zrEAI)
+lien vers diagramme de classe : https://docs.google.com/document/d/1WGf0ZouYbzGmUSfyE67OmJXdn9nW_qgM40W0_lQ7z5w/edit?usp=sharing
 
 
 
